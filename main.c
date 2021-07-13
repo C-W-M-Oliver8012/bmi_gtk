@@ -39,7 +39,7 @@ static void build_header_bar(struct Application_Widgets *app_widgets)
 
 static void build_height_label(struct Application_Widgets *app_widgets)
 {
-	app_widgets->height_label = gtk_label_new("Height (Inches): ");
+	app_widgets->height_label = gtk_label_new("Height (inches): ");
 	gtk_widget_set_margin_start(app_widgets->height_label, 10);
 	gtk_widget_set_margin_end(app_widgets->height_label, 10);
 	gtk_widget_set_margin_top(app_widgets->height_label, 10);
@@ -48,7 +48,7 @@ static void build_height_label(struct Application_Widgets *app_widgets)
 
 static void build_weight_label(struct Application_Widgets *app_widgets)
 {
-	app_widgets->weight_label = gtk_label_new("Weight (Pounds): ");
+	app_widgets->weight_label = gtk_label_new("Weight (pounds): ");
 	gtk_widget_set_margin_start(app_widgets->weight_label, 10);
 	gtk_widget_set_margin_end(app_widgets->weight_label, 10);
 	gtk_widget_set_margin_top(app_widgets->weight_label, 10);
@@ -137,8 +137,8 @@ int main(int argc, char **argv)
 	g_signal_connect(app, "activate", G_CALLBACK(build_window), app_widgets);
 
 	status = g_application_run(G_APPLICATION(app), argc, argv);
-	g_object_unref(app);
 	free(app_widgets);
+	g_object_unref(app);
 
 	return status;
 }
